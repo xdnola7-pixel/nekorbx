@@ -1,28 +1,17 @@
 # NekoRBX
 
-NekoRBX es el sitio web de una tienda de Robux. Los visitantes ven 21 paquetes con precios en COP y USD, los filtran por tamaño y compran con un clic: se abre WhatsApp con un mensaje ya escrito que incluye los datos exactos del paquete. Las ofertas y sorteos se publican en el Discord de la comunidad.
+## Códigos digitales (Robux y otros servicios)
 
-## Tecnologías
+La página de códigos está en `/codigos/` y la administración del inventario en `/admin/codigos.html` (primero inicia sesión en `/admin/`). Desde ese panel puedes crear servicios, configurar su nombre/descripción/precio y cargar los códigos auténticos manualmente. El inventario se guarda en PostgreSQL; el sitio nunca fabrica códigos canjeables.
 
-- HTML, CSS y JavaScript puro, sin framework ni paso de compilación
-- Netlify como hosting estático (`netlify.toml` publica la carpeta `public/`)
-- Fuentes Inter y JetBrains Mono (Google Fonts)
+Cada cliente debe iniciar sesión, puede solicitar un código por servicio y el servidor lo entrega de forma atómica una sola vez. La API pública no expone los códigos disponibles. Las cargas administrativas se limitan a 500 por solicitud y las acciones quedan registradas en auditoría.
 
-## Ejecutar en local
+## Activación en Netlify
 
-```bash
-npx netlify dev --port 8889
-# o cualquier servidor estático, por ejemplo:
-npx serve public
-```
+1. Publica/mezcla la rama de esta función en la rama que Netlify despliega.
+2. Aplica la migración `netlify/database/migrations/20261121120000_add_gift_code_inventory/migration.sql` a la base PostgreSQL conectada al sitio (una vez).
+3. Verifica que Netlify Identity y la variable de conexión de base de datos existentes sigan configuradas.
+4. Inicia sesión en `/admin/`, abre `/admin/codigos.html`, crea un servicio y carga códigos reales.
+5. Comparte `/codigos/` con los clientes.
 
-## Estructura
-
-- `public/index.html`: página principal (navbar, hero, tienda, ofertas, redes, footer)
-- `public/assets/styles.css`: tema, animaciones y diseño responsivo
-- `public/assets/app.js`: datos de los paquetes, tarjetas, pestañas de filtro, menú y gatito que persigue el cursor
-- `public/terminos.html`, `public/privacidad.html`: páginas legales
-
-## Pendiente
-
-- Cambiar los enlaces de TikTok e Instagram (en `public/index.html`, atributo `data-social`) por los perfiles reales.
+La pantalla de administración está separada del panel general para no modificar sus rutas existentes; protege sus APIs con la misma sesión de administrador del panel.
