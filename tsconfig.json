@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": false,
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"]
+  },
+  "include": ["db/**/*.ts", "server/**/*.ts", "netlify/functions/**/*.mts", "tests/**/*.ts"]
+}

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acceso — NekoRBX</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#07060b" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <!-- Símbolos SVG reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ffe27a" />
+        <stop offset=".5" stop-color="#f5b82e" />
+        <stop offset="1" stop-color="#c98a0c" />
+      </linearGradient>
+    </defs>
+    <symbol id="i-robux" viewBox="0 0 64 64">
+      <path fill="url(#gold)" fill-rule="evenodd" d="M32 3.5 56.7 17.75v28.5L32 60.5 7.3 46.25v-28.5L32 3.5Zm0 10.2L16.15 22.85v18.3L32 50.3l15.85-9.15v-18.3L32 13.7Z" />
+      <rect x="24.5" y="24.5" width="15" height="15" rx="2.2" fill="url(#gold)" />
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13.2 2 4.5 13.4h6.1L9.8 22l8.7-11.4h-6.1L13.2 2Z" /></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.8 4.5 5.6v6.1c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V5.6L12 2.8Z" /><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12 2.2 2.2 4.3-4.4" /></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 4h2.2l2.3 11.1a1.6 1.6 0 0 0 1.6 1.3h8.3a1.6 1.6 0 0 0 1.6-1.2L20.6 8H6.1" /><circle cx="9.5" cy="20" r="1.3" fill="currentColor" /><circle cx="17.5" cy="20" r="1.3" fill="currentColor" /></symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24"><path fill="currentColor" d="M19.6 5.3A17.6 17.6 0 0 0 15.3 4l-.55 1.1a16.3 16.3 0 0 0-5.5 0L8.7 4a17.5 17.5 0 0 0-4.3 1.3C1.7 9.4.9 13.3 1.3 17.2a17.7 17.7 0 0 0 5.3 2.7l1.15-1.8a11.5 11.5 0 0 1-1.8-.87l.44-.34a12.6 12.6 0 0 0 11.2 0l.44.34c-.57.34-1.18.63-1.8.87l1.15 1.8a17.6 17.6 0 0 0 5.3-2.7c.47-4.5-.8-8.4-3.1-11.9ZM8.5 14.8c-1 0-1.9-.95-1.9-2.1s.84-2.1 1.9-2.1 1.92.95 1.9 2.1c0 1.15-.84 2.1-1.9 2.1Zm7 0c-1 0-1.9-.95-1.9-2.1s.84-2.1 1.9-2.1 1.92.95 1.9 2.1c0 1.15-.84 2.1-1.9 2.1Z" /></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06a6.6 6.6 0 0 1-3.27-2.86c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.42l-.74-1.79c-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64 1.53.66 2.13.72 2.9.6.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z" /></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.1-2.8V9a6.2 6.2 0 1 0 5.4 6.2V8.6a7.8 7.8 0 0 0 4.4 1.4V6.7a4.5 4.5 0 0 1-4.4-4.7Z" /></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8" /><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8" /><circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" /></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5c.6 4.6 2.9 6.9 7.5 7.5-4.6.6-6.9 2.9-7.5 7.5-.6-4.6-2.9-6.9-7.5-7.5 4.6-.6 6.9-2.9 7.5-7.5Zm6.5 12c.3 2 1.2 2.9 3.2 3.2-2 .3-2.9 1.2-3.2 3.2-.3-2-1.2-2.9-3.2-3.2 2-.3 2.9-1.2 3.2-3.2Z" /></symbol>
+    <symbol id="i-cat" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V4.5l5.6 4.6a12 12 0 0 1 8.8 0L26 4.5v9c1.3 1.9 2 4 2 6.1C28 25 22.6 28 16 28S4 25 4 19.6c0-2.1.7-4.2 2-6.1Z" /><circle cx="11.5" cy="18" r="1.4" fill="currentColor" /><circle cx="20.5" cy="18" r="1.4" fill="currentColor" /><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M14.6 21.6 16 22.8l1.4-1.2" /></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.2" r="3.7" fill="none" stroke="currentColor" stroke-width="1.8" /><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4.8 20.2c.9-3.6 3.7-5.6 7.2-5.6s6.3 2 7.2 5.6" /></symbol>
+    <symbol id="i-stream" viewBox="0 0 24 24"><rect x="2.8" y="4.5" width="18.4" height="12.6" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.8" /><path fill="currentColor" d="M10 8.3v4.9l4.3-2.45L10 8.3Z" /><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8 20h8" /></symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.8" /><path fill="currentColor" d="M12 7.8c.35 2.2 1.5 3.4 3.7 3.7-2.2.35-3.35 1.5-3.7 3.7-.35-2.2-1.5-3.35-3.7-3.7 2.2-.3 3.35-1.5 3.7-3.7Z" /><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9 2.5V5m6-2.5V5M9 19v2.5m6-2.5v2.5M2.5 9H5m-2.5 6H5M19 9h2.5M19 15h2.5" /></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18" /></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 7h15M10 11v6m4-6v6M6.5 7l.8 12a1.8 1.8 0 0 0 1.8 1.7h5.8a1.8 1.8 0 0 0 1.8-1.7l.8-12M9.5 7V4.8h5V7" /></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8" /><path fill="none" stroke="currentColor" stroke-width="1.8" d="M15.5 8.5V6.7a2.2 2.2 0 0 0-2.2-2.2H6.7a2.2 2.2 0 0 0-2.2 2.2v6.6a2.2 2.2 0 0 0 2.2 2.2h1.8" /></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5v-9Z" /><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.5 8.5h7M8.5 12h4.5" /></symbol>
+  </svg>
+
+  <header class="nav" id="top">
+    <div class="nav__inner container">
+      <a href="/#inicio" class="logo" aria-label="NekoRBX inicio">
+        <svg class="logo__mark"><use href="#i-cat" /></svg>
+        <span class="logo__text">Neko<b>RBX</b></span>
+      </a>
+
+      <nav class="nav__menu" id="menu" aria-label="Principal">
+        <a href="/#inicio" class="nav__link" data-i18n="nav.home">Inicio</a>
+        <a href="/#tienda" class="nav__link" data-i18n="nav.shop">Tienda</a>
+        <a href="/#ofertas" class="nav__link"><span data-i18n="nav.offers">Ofertas</span> <span class="badge-discord"><svg><use href="#i-discord" /></svg>Discord</span></a>
+        <a href="/#redes" class="nav__link" data-i18n="nav.social">Redes Sociales</a>
+        <a href="/#contacto" class="nav__link" data-i18n="nav.contact">Contacto</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button type="button" class="lang-btn mono" data-lang-toggle data-i18n-attr="aria-label:nav.lang" aria-label="Cambiar idioma"><span data-lang-label>EN</span></button>
+        <a href="/acceso/" class="icon-btn account-btn" data-account-btn aria-label="Iniciar sesión"><svg><use href="#i-user" /></svg><span class="account-btn__label" data-account-label>Iniciar sesión</span></a>
+        <a href="/#carrito" class="icon-btn cart-btn" data-i18n-attr="aria-label:nav.cart" aria-label="Abrir carrito"><svg><use href="#i-cart" /></svg></a>
+        <a href="/cuenta/#pedidos" class="btn btn--pill btn--outline" data-order-btn data-i18n="nav.order">Tu pedido</a>
+        <button class="burger" id="burger" data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page auth">
+    <section class="panel" id="authPanel" aria-live="polite">
+      <a class="back mono muted" href="/" data-i18n="auth.back">Volver a la tienda</a>
+      <h1 id="authTitle" data-i18n="auth.loginTitle">Iniciar sesión</h1>
+      <p class="lead" id="authLead" data-i18n="auth.loginSub">Accede para confirmar pedidos y consultar tu historial.</p>
+
+      <form id="f-login" data-view="login" novalidate>
+        <label class="field"><span data-i18n="auth.email">Correo electrónico</span><input class="input" type="email" name="email" autocomplete="email" required maxlength="120" /></label>
+        <label class="field"><span data-i18n="auth.password">Contraseña</span><input class="input" type="password" name="password" autocomplete="current-password" required maxlength="128" /></label>
+        <button class="btn btn--pill btn--primary" type="submit" data-i18n="auth.login">Entrar</button>
+      </form>
+
+      <form id="f-register" data-view="register" novalidate hidden>
+        <label class="field"><span data-i18n="auth.name">Nombre o usuario</span><input class="input" type="text" name="name" autocomplete="nickname" required minlength="2" maxlength="40" /></label>
+        <label class="field"><span data-i18n="auth.email">Correo electrónico</span><input class="input" type="email" name="email" autocomplete="email" required maxlength="120" /></label>
+        <label class="field"><span data-i18n="auth.password">Contraseña</span><input class="input" type="password" name="password" autocomplete="new-password" required minlength="8" maxlength="128" /><small data-i18n="auth.passwordHint">Mínimo 8 caracteres, con letras y números.</small></label>
+        <label class="field"><span data-i18n="auth.password2">Repite la contraseña</span><input class="input" type="password" name="password2" autocomplete="new-password" required maxlength="128" /></label>
+        <button class="btn btn--pill btn--primary" type="submit" data-i18n="auth.register">Registrarme</button>
+      </form>
+
+      <form id="f-recover" data-view="recover" novalidate hidden>
+        <label class="field"><span data-i18n="auth.email">Correo electrónico</span><input class="input" type="email" name="email" autocomplete="email" required maxlength="120" /></label>
+        <button class="btn btn--pill btn--primary" type="submit" data-i18n="auth.recover">Enviar enlace</button>
+      </form>
+
+      <form id="f-reset" data-view="reset" novalidate hidden>
+        <label class="field"><span data-i18n="auth.password">Contraseña</span><input class="input" type="password" name="password" autocomplete="new-password" required minlength="8" maxlength="128" /><small data-i18n="auth.passwordHint">Mínimo 8 caracteres, con letras y números.</small></label>
+        <label class="field"><span data-i18n="auth.password2">Repite la contraseña</span><input class="input" type="password" name="password2" autocomplete="new-password" required maxlength="128" /></label>
+        <button class="btn btn--pill btn--primary" type="submit" data-i18n="auth.reset">Guardar contraseña</button>
+      </form>
+
+      <p class="form-error" id="authError" role="alert" hidden></p>
+      <p class="form-ok" id="authOk" role="status" hidden></p>
+
+      <div class="auth__links" id="authLinks">
+        <button type="button" class="link" data-go="register" data-i18n="auth.toRegister">¿No tienes cuenta? Regístrate</button>
+        <button type="button" class="link" data-go="login" data-i18n="auth.toLogin" hidden>¿Ya tienes cuenta? Inicia sesión</button>
+        <button type="button" class="link" data-go="recover" data-i18n="auth.forgot">¿Olvidaste tu contraseña?</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="contacto">
+    <div class="container footer__bottom mono">
+      <p data-i18n="footer.rights">© 2026 NekoRBX. Todos los derechos reservados.</p>
+      <p class="footer__disclaimer" data-i18n="footer.disclaimer">NekoRBX no está afiliado a Roblox Corporation ni a los servicios mencionados. Las marcas pertenecen a sus respectivos dueños.</p>
+    </div>
+  </footer>
+
+  <!-- Gatito que persigue el cursor -->
+  <div class="neko" id="neko" aria-hidden="true">
+    <svg class="neko__svg" viewBox="0 0 64 64">
+      <g class="neko__tail"><path d="M46 46c8 0 12-5 11-11" fill="none" stroke="#0d0b14" stroke-width="5" stroke-linecap="round" /><path d="M57 35c.3-1.6-.2-3-1-4" fill="none" stroke="#8b5cf6" stroke-width="5" stroke-linecap="round" /></g>
+      <g class="neko__body">
+        <ellipse cx="32" cy="45" rx="15" ry="11" fill="#0d0b14" />
+        <g class="neko__legs">
+          <rect class="leg l1" x="21" y="50" width="5.5" height="9" rx="2.75" fill="#0d0b14" />
+          <rect class="leg l2" x="37.5" y="50" width="5.5" height="9" rx="2.75" fill="#0d0b14" />
+        </g>
+        <ellipse cx="32" cy="47" rx="7" ry="5.5" fill="#1a1626" />
+      </g>
+      <g class="neko__head">
+        <path d="M15 29 14 11l10 8h16l10-8-1 18c0 8-7.5 13-17 13S15 37 15 29Z" fill="#0d0b14" />
+        <path d="M17 14.5 23 19.3 17.3 23Z M47 14.5 41 19.3 46.7 23Z" fill="#8b5cf6" opacity=".85" />
+        <g class="neko__eyes">
+          <ellipse cx="25" cy="28" rx="3.2" ry="3.8" fill="#a78bfa" />
+          <ellipse cx="39" cy="28" rx="3.2" ry="3.8" fill="#a78bfa" />
+          <ellipse cx="25.6" cy="28" rx="1.3" ry="2.6" fill="#07060b" />
+          <ellipse cx="39.6" cy="28" rx="1.3" ry="2.6" fill="#07060b" />
+          <circle cx="24" cy="26.5" r=".9" fill="#fff" />
+          <circle cx="38" cy="26.5" r=".9" fill="#fff" />
+        </g>
+        <g class="neko__sleep" fill="none" stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round">
+          <path d="M21.5 28.5q3.5 2.6 7 0" />
+          <path d="M35.5 28.5q3.5 2.6 7 0" />
+        </g>
+        <path d="M30.4 32.6h3.2L32 34.4Z" fill="#f0abfc" />
+        <path d="M32 34.4q-1.6 2-3.4 1M32 34.4q1.6 2 3.4 1" fill="none" stroke="#3b3550" stroke-width="1" stroke-linecap="round" />
+        <path d="M18 32h-6M18 34.5l-5.5 1.5M46 32h6M46 34.5l5.5 1.5" stroke="#3b3550" stroke-width=".9" stroke-linecap="round" />
+        <circle cx="20.5" cy="33.5" r="2" fill="#8b5cf6" opacity=".35" />
+        <circle cx="43.5" cy="33.5" r="2" fill="#8b5cf6" opacity=".35" />
+      </g>
+      <!-- collar morado -->
+      <path d="M21 40.5q11 5 22 0" fill="none" stroke="#8b5cf6" stroke-width="2.6" stroke-linecap="round" />
+      <circle cx="32" cy="44" r="2.2" fill="#fbbf24" />
+    </svg>
+    <span class="neko__z mono">z</span>
+  </div>
+
+  <script src="/assets/i18n.js"></script>
+  <script src="/assets/core.js"></script>
+  <script src="/assets/app.js"></script>
+  <script src="/assets/auth-page.js"></script>
+</body>
+</html>

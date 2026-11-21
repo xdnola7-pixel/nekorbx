@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NekoRBX — Robux, sin complicaciones.</title>
+  <meta name="description" content="NekoRBX: elige tu paquete de Robux, realiza tu pedido por WhatsApp y recíbelos de forma rápida y segura. Precios en COP y USD." />
+  <meta name="theme-color" content="#07060b" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <!-- Símbolos SVG reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ffe27a" />
+        <stop offset=".5" stop-color="#f5b82e" />
+        <stop offset="1" stop-color="#c98a0c" />
+      </linearGradient>
+    </defs>
+    <symbol id="i-robux" viewBox="0 0 64 64">
+      <path fill="url(#gold)" fill-rule="evenodd" d="M32 3.5 56.7 17.75v28.5L32 60.5 7.3 46.25v-28.5L32 3.5Zm0 10.2L16.15 22.85v18.3L32 50.3l15.85-9.15v-18.3L32 13.7Z" />
+      <rect x="24.5" y="24.5" width="15" height="15" rx="2.2" fill="url(#gold)" />
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13.2 2 4.5 13.4h6.1L9.8 22l8.7-11.4h-6.1L13.2 2Z" /></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.8 4.5 5.6v6.1c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V5.6L12 2.8Z" /><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12 2.2 2.2 4.3-4.4" /></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 4h2.2l2.3 11.1a1.6 1.6 0 0 0 1.6 1.3h8.3a1.6 1.6 0 0 0 1.6-1.2L20.6 8H6.1" /><circle cx="9.5" cy="20" r="1.3" fill="currentColor" /><circle cx="17.5" cy="20" r="1.3" fill="currentColor" /></symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24"><path fill="currentColor" d="M19.6 5.3A17.6 17.6 0 0 0 15.3 4l-.55 1.1a16.3 16.3 0 0 0-5.5 0L8.7 4a17.5 17.5 0 0 0-4.3 1.3C1.7 9.4.9 13.3 1.3 17.2a17.7 17.7 0 0 0 5.3 2.7l1.15-1.8a11.5 11.5 0 0 1-1.8-.87l.44-.34a12.6 12.6 0 0 0 11.2 0l.44.34c-.57.34-1.18.63-1.8.87l1.15 1.8a17.6 17.6 0 0 0 5.3-2.7c.47-4.5-.8-8.4-3.1-11.9ZM8.5 14.8c-1 0-1.9-.95-1.9-2.1s.84-2.1 1.9-2.1 1.92.95 1.9 2.1c0 1.15-.84 2.1-1.9 2.1Zm7 0c-1 0-1.9-.95-1.9-2.1s.84-2.1 1.9-2.1 1.92.95 1.9 2.1c0 1.15-.84 2.1-1.9 2.1Z" /></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06a6.6 6.6 0 0 1-3.27-2.86c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.42l-.74-1.79c-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64 1.53.66 2.13.72 2.9.6.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z" /></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.1-2.8V9a6.2 6.2 0 1 0 5.4 6.2V8.6a7.8 7.8 0 0 0 4.4 1.4V6.7a4.5 4.5 0 0 1-4.4-4.7Z" /></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8" /><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8" /><circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" /></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5c.6 4.6 2.9 6.9 7.5 7.5-4.6.6-6.9 2.9-7.5 7.5-.6-4.6-2.9-6.9-7.5-7.5 4.6-.6 6.9-2.9 7.5-7.5Zm6.5 12c.3 2 1.2 2.9 3.2 3.2-2 .3-2.9 1.2-3.2 3.2-.3-2-1.2-2.9-3.2-3.2 2-.3 2.9-1.2 3.2-3.2Z" /></symbol>
+    <symbol id="i-cat" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V4.5l5.6 4.6a12 12 0 0 1 8.8 0L26 4.5v9c1.3 1.9 2 4 2 6.1C28 25 22.6 28 16 28S4 25 4 19.6c0-2.1.7-4.2 2-6.1Z" /><circle cx="11.5" cy="18" r="1.4" fill="currentColor" /><circle cx="20.5" cy="18" r="1.4" fill="currentColor" /><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M14.6 21.6 16 22.8l1.4-1.2" /></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.2" r="3.7" fill="none" stroke="currentColor" stroke-width="1.8" /><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4.8 20.2c.9-3.6 3.7-5.6 7.2-5.6s6.3 2 7.2 5.6" /></symbol>
+    <symbol id="i-stream" viewBox="0 0 24 24"><rect x="2.8" y="4.5" width="18.4" height="12.6" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.8" /><path fill="currentColor" d="M10 8.3v4.9l4.3-2.45L10 8.3Z" /><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8 20h8" /></symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.8" /><path fill="currentColor" d="M12 7.8c.35 2.2 1.5 3.4 3.7 3.7-2.2.35-3.35 1.5-3.7 3.7-.35-2.2-1.5-3.35-3.7-3.7 2.2-.3 3.35-1.5 3.7-3.7Z" /><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9 2.5V5m6-2.5V5M9 19v2.5m6-2.5v2.5M2.5 9H5m-2.5 6H5M19 9h2.5M19 15h2.5" /></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18" /></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 7h15M10 11v6m4-6v6M6.5 7l.8 12a1.8 1.8 0 0 0 1.8 1.7h5.8a1.8 1.8 0 0 0 1.8-1.7l.8-12M9.5 7V4.8h5V7" /></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8" /><path fill="none" stroke="currentColor" stroke-width="1.8" d="M15.5 8.5V6.7a2.2 2.2 0 0 0-2.2-2.2H6.7a2.2 2.2 0 0 0-2.2 2.2v6.6a2.2 2.2 0 0 0 2.2 2.2h1.8" /></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5v-9Z" /><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.5 8.5h7M8.5 12h4.5" /></symbol>
+  </svg>
+
+  <header class="nav" id="top">
+    <div class="nav__inner container">
+      <a href="#inicio" class="logo" aria-label="NekoRBX inicio">
+        <svg class="logo__mark"><use href="#i-cat" /></svg>
+        <span class="logo__text">Neko<b>RBX</b></span>
+      </a>
+
+      <nav class="nav__menu" id="menu" aria-label="Principal">
+        <a href="#inicio" class="nav__link is-active" data-i18n="nav.home">Inicio</a>
+        <a href="#tienda" class="nav__link" data-i18n="nav.shop">Tienda</a>
+        <a href="#ofertas" class="nav__link"><span data-i18n="nav.offers">Ofertas</span> <span class="badge-discord"><svg><use href="#i-discord" /></svg>Discord</span></a>
+        <a href="#redes" class="nav__link" data-i18n="nav.social">Redes Sociales</a>
+        <a href="#contacto" class="nav__link" data-i18n="nav.contact">Contacto</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button type="button" class="lang-btn mono" data-lang-toggle data-i18n-attr="aria-label:nav.lang" aria-label="Cambiar idioma"><span data-lang-label>EN</span></button>
+        <a href="/acceso/" class="icon-btn account-btn" data-account-btn aria-label="Iniciar sesión"><svg><use href="#i-user" /></svg><span class="account-btn__label" data-account-label>Iniciar sesión</span></a>
+        <button type="button" class="icon-btn cart-btn" id="cartBtn" data-i18n-attr="aria-label:nav.cart" aria-label="Abrir carrito" aria-controls="cart" aria-expanded="false"><svg><use href="#i-cart" /></svg><span class="cart-btn__count" id="cartCount" hidden>0</span></button>
+        <a href="/cuenta/#pedidos" class="btn btn--pill btn--outline" data-order-btn data-i18n="nav.order">Tu pedido</a>
+        <button class="burger" id="burger" data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" id="inicio">
+      <div class="hero__copy">
+        <p class="eyebrow mono"><span class="dot"></span> <span data-i18n="hero.eyebrow">Tienda de Robux · Colombia</span></p>
+        <h1 class="hero__title" data-i18n-html="hero.title">Robux, sin <span class="accent">complicaciones.</span></h1>
+        <p class="hero__sub" data-i18n="hero.sub">Elige tu paquete, realiza tu pedido y recibe tus Robux de forma rápida y segura.</p>
+        <div class="hero__cta">
+          <a href="#tienda" class="btn btn--pill btn--primary"><span data-i18n="hero.cta">Ver paquetes</span> <svg><use href="#i-arrow" /></svg></a>
+          <a href="https://wa.me/573247359023" target="_blank" rel="noopener" class="btn btn--pill btn--ghost"><svg><use href="#i-whatsapp" /></svg> <span data-i18n="hero.write">Escríbenos</span></a>
+        </div>
+        <ul class="hero__badges">
+          <li class="chip"><span class="chip__icon"><svg><use href="#i-bolt" /></svg></span><span data-i18n="hero.fast">Entrega rápida</span></li>
+          <li class="chip"><span class="chip__icon"><svg><use href="#i-shield" /></svg></span><span data-i18n="hero.safe">100% seguro</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__art">
+        <div class="box-wrap">
+          <div class="cube-glow"></div>
+          <svg class="nbox" viewBox="0 0 240 240" aria-hidden="true">
+            <defs><clipPath id="bxClip"><rect x="0" y="0" width="240" height="222" /></clipPath></defs>
+            <g class="bx-body">
+            <g clip-path="url(#bxClip)">
+            <!-- gatito (detrás del frente de la caja) -->
+            <g class="bx-cat"><g class="bx-head">
+              <path d="M88 96 96 62 114 86Z M152 96 144 62 126 86Z" fill="#111018" stroke="#8b5cf6" stroke-width="2" stroke-linejoin="round" />
+              <path d="M95 84 98 72 106 84Z M145 84 142 72 134 84Z" fill="#8b5cf6" opacity=".7" />
+              <ellipse cx="120" cy="112" rx="38" ry="32" fill="#111018" stroke="#8b5cf6" stroke-width="2" />
+              <g class="bx-eyes"><ellipse cx="105" cy="110" rx="5" ry="6" fill="#a78bfa" /><ellipse cx="135" cy="110" rx="5" ry="6" fill="#a78bfa" /></g>
+              <path d="M116 121 120 124 124 121" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" />
+              <ellipse cx="96" cy="124" rx="6" ry="3" fill="#8b5cf6" opacity=".35" /><ellipse cx="144" cy="124" rx="6" ry="3" fill="#8b5cf6" opacity=".35" />
+              <ellipse class="bx-yawn" cx="120" cy="125" rx="7" ry="9" fill="#2a0f3d" stroke="#a78bfa" stroke-width="1.5" />
+              </g>
+              <ellipse cx="98" cy="140" rx="11" ry="8" fill="#111018" stroke="#8b5cf6" stroke-width="2" />
+              <ellipse class="bx-paw" cx="142" cy="140" rx="11" ry="8" fill="#111018" stroke="#8b5cf6" stroke-width="2" />
+            </g>
+            </g>
+            <!-- frente de la caja -->
+            <rect x="50" y="140" width="140" height="84" rx="6" fill="#16141f" stroke="#8b5cf6" stroke-width="2" />
+            <path d="M120 140v26" stroke="#8b5cf6" stroke-opacity=".5" stroke-width="2" />
+            <text x="120" y="200" text-anchor="middle" class="bx-label">NekoRBX</text>
+            <!-- tapas -->
+            <rect class="bx-lid bx-lid--l" x="46" y="132" width="76" height="10" rx="3" fill="#1f1c2b" stroke="#8b5cf6" stroke-width="2" />
+            <rect class="bx-lid bx-lid--r" x="118" y="132" width="76" height="10" rx="3" fill="#1f1c2b" stroke="#8b5cf6" stroke-width="2" />
+            </g>
+            <g class="bx-z"><text x="176" y="116">z</text><text x="190" y="96">Z</text></g>
+          </svg>
+        </div>
+        <div class="hero__tag mono">
+          <p data-i18n-html="hero.tag">Más Robux,<br />más diversión.</p>
+          <span class="tag-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIENDA -->
+    <section class="shop container" id="tienda">
+      <div class="tabs cat-tabs" id="catTabs" role="tablist" data-i18n-attr="aria-label:shop.categories" aria-label="Categorías de la tienda">
+        <button class="tab is-active" role="tab" aria-selected="true" data-cat="robux"><svg><use href="#i-robux" /></svg>Robux</button>
+        <button class="tab" role="tab" aria-selected="false" data-cat="neko-stream"><svg><use href="#i-stream" /></svg>Neko Stream</button>
+        <button class="tab" role="tab" aria-selected="false" data-cat="neko-ai"><svg><use href="#i-ai" /></svg>Neko AI</button>
+      </div>
+
+      <div class="section-head">
+        <h2 class="section-title"><span class="bar"></span><span id="shopTitle">Paquetes de Robux</span></h2>
+        <p class="section-sub mono" id="shopSub">Selecciona el paquete que necesitas.</p>
+      </div>
+
+      <div class="tabs" id="robuxTabs" role="tablist" data-i18n-attr="aria-label:shop.filter" aria-label="Filtrar paquetes">
+        <button class="tab is-active" role="tab" aria-selected="true" data-filter="all"><span data-i18n="shop.all" class="tab__name">Todos</span> <span class="mono" data-range="all">(21)</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="basic"><span data-i18n="shop.basic" class="tab__name">Básicos</span> <span class="mono" data-range="basic">(50 - 500)</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="medium"><span data-i18n="shop.medium" class="tab__name">Medianos</span> <span class="mono" data-range="medium">(600 - 1.700)</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="large"><span data-i18n="shop.large" class="tab__name">Grandes</span> <span class="mono" data-range="large">(2.000 - 4.500)</span></button>
+      </div>
+
+      <p class="shop-note mono" id="shopNote" hidden></p>
+      <div class="grid" id="grid" aria-live="polite"></div>
+      <noscript><p class="noscript">Activa JavaScript para ver los paquetes, o <a href="https://wa.me/573247359023">escríbenos por WhatsApp</a>.</p></noscript>
+
+      <a class="custom" href="https://wa.me/573247359023?text=%C2%A1Hola%20NekoRBX!%20%F0%9F%90%BE%20Quiero%20consultar%20el%20precio%20de%20otra%20cantidad%20de%20Robux." target="_blank" rel="noopener">
+        <span class="custom__icon"><svg><use href="#i-chat" /></svg></span>
+        <span class="custom__text">
+          <strong data-i18n="shop.custom.title">¿Buscas otra cantidad o más paquetes?</strong>
+          <span data-i18n="shop.custom.sub">Escríbenos a nuestro WhatsApp y consulta el precio personalizado.</span>
+        </span>
+        <span class="btn btn--pill btn--primary custom__btn"><svg><use href="#i-whatsapp" /></svg> <span data-i18n="shop.custom.btn">Consultar por WhatsApp</span></span>
+      </a>
+    </section>
+
+    <!-- OFERTAS -->
+    <section class="container" id="ofertas">
+      <div class="offers-live" id="offersLive" hidden>
+        <div class="section-head">
+          <h2 class="section-title"><span class="bar"></span><span data-i18n="offers.title">Ofertas activas</span></h2>
+          <p class="section-sub mono" data-i18n="offers.sub">Promociones vigentes por tiempo limitado.</p>
+        </div>
+        <div class="grid offers-grid" id="offersGrid"></div>
+      </div>
+      <div class="offer">
+        <div class="offer__noise"></div>
+        <div class="offer__body">
+          <span class="offer__label mono"><svg><use href="#i-sparkle" /></svg> <span data-i18n="offers.label">EXCLUSIVO COMUNIDAD</span></span>
+          <h2 class="offer__title" data-i18n-html="offers.discord.title">Ofertas Especiales y Sorteos <span>(Solo disponibles en Discord)</span></h2>
+          <p class="offer__sub" data-i18n="offers.discord.sub">Únete a la comunidad NekoRBX para enterarte primero de descuentos, códigos y sorteos de Robux.</p>
+          <a href="https://discord.gg/jWXcybQgqD" target="_blank" rel="noopener" class="btn btn--pill btn--discord"><svg><use href="#i-discord" /></svg> <span data-i18n="offers.discord.btn">Unirme al Discord</span></a>
+        </div>
+        <div class="offer__art" aria-hidden="true">
+          <svg class="offer__discord"><use href="#i-discord" /></svg>
+          <svg class="offer__coin c1"><use href="#i-robux" /></svg>
+          <svg class="offer__coin c2"><use href="#i-robux" /></svg>
+          <svg class="offer__coin c3"><use href="#i-robux" /></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDES -->
+    <section class="container social" id="redes">
+      <div class="section-head">
+        <h2 class="section-title"><span class="bar"></span><span data-i18n="nav.social">Redes Sociales</span></h2>
+        <p class="section-sub mono" data-i18n="social.sub">Síguenos y habla con nosotros.</p>
+      </div>
+      <div class="social__grid">
+        <a class="social-card" style="--c:#5865F2" href="https://discord.gg/jWXcybQgqD" target="_blank" rel="noopener">
+          <span class="social-card__icon"><svg><use href="#i-discord" /></svg></span>
+          <span class="social-card__name" data-i18n="social.discordName">Discord Oficial</span>
+          <span class="social-card__meta mono" data-i18n="social.discord">Ofertas, sorteos y comunidad</span>
+          <svg class="social-card__arrow"><use href="#i-arrow" /></svg>
+        </a>
+        <a class="social-card" style="--c:#25D366" href="https://wa.me/573247359023" target="_blank" rel="noopener">
+          <span class="social-card__icon"><svg><use href="#i-whatsapp" /></svg></span>
+          <span class="social-card__name" data-i18n="social.whatsapp">WhatsApp Directo</span>
+          <span class="social-card__meta mono">+57 324 735 9023</span>
+          <svg class="social-card__arrow"><use href="#i-arrow" /></svg>
+        </a>
+        <a class="social-card" style="--c:#ff0050" href="https://www.tiktok.com/@meguru5620" target="_blank" rel="noopener" data-social="tiktok">
+          <span class="social-card__icon"><svg><use href="#i-tiktok" /></svg></span>
+          <span class="social-card__name">TikTok</span>
+          <span class="social-card__meta mono" data-i18n="social.tiktok">Videos y novedades</span>
+          <svg class="social-card__arrow"><use href="#i-arrow" /></svg>
+        </a>
+        <a class="social-card" style="--c:#e1306c" href="https://www.instagram.com/daniell_galvis10/" target="_blank" rel="noopener" data-social="instagram">
+          <span class="social-card__icon"><svg><use href="#i-instagram" /></svg></span>
+          <span class="social-card__name">Instagram</span>
+          <span class="social-card__meta mono" data-i18n="social.instagram">Historias y entregas</span>
+          <svg class="social-card__arrow"><use href="#i-arrow" /></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#inicio" class="logo">
+          <svg class="logo__mark"><use href="#i-cat" /></svg>
+          <span class="logo__text">Neko<b>RBX</b></span>
+        </a>
+        <p class="mono" data-i18n="footer.tagline">Tu tienda de Robux</p>
+      </div>
+      <nav class="footer__links" aria-label="Legal">
+        <a href="/terminos.html" data-i18n="footer.terms">Términos y condiciones</a>
+        <a href="/privacidad.html" data-i18n="footer.privacy">Privacidad</a>
+      </nav>
+      <a href="https://wa.me/573247359023" target="_blank" rel="noopener" class="btn btn--pill btn--border"><svg><use href="#i-whatsapp" /></svg> <span data-i18n="footer.contact">Contáctanos</span></a>
+    </div>
+    <div class="container footer__bottom mono">
+      <p data-i18n="footer.rights">© 2026 NekoRBX. Todos los derechos reservados.</p>
+      <p class="footer__disclaimer" data-i18n="footer.disclaimer">NekoRBX no está afiliado a Roblox Corporation ni a los servicios mencionados. Las marcas pertenecen a sus respectivos dueños.</p>
+    </div>
+  </footer>
+
+  <!-- Carrito -->
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="drawer" id="cart" aria-labelledby="cartTitle" aria-hidden="true" inert>
+    <header class="drawer__head">
+      <h2 class="drawer__title" id="cartTitle"><svg><use href="#i-cart" /></svg><span data-i18n="cart.title">Tu carrito</span></h2>
+      <button type="button" class="icon-btn" id="cartClose" data-i18n-attr="aria-label:cart.close" aria-label="Cerrar carrito"><svg><use href="#i-close" /></svg></button>
+    </header>
+    <div class="drawer__body" id="cartBody"></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- Gatito que persigue el cursor -->
+  <div class="neko" id="neko" aria-hidden="true">
+    <svg class="neko__svg" viewBox="0 0 64 64">
+      <g class="neko__tail"><path d="M46 46c8 0 12-5 11-11" fill="none" stroke="#0d0b14" stroke-width="5" stroke-linecap="round" /><path d="M57 35c.3-1.6-.2-3-1-4" fill="none" stroke="#8b5cf6" stroke-width="5" stroke-linecap="round" /></g>
+      <g class="neko__body">
+        <ellipse cx="32" cy="45" rx="15" ry="11" fill="#0d0b14" />
+        <g class="neko__legs">
+          <rect class="leg l1" x="21" y="50" width="5.5" height="9" rx="2.75" fill="#0d0b14" />
+          <rect class="leg l2" x="37.5" y="50" width="5.5" height="9" rx="2.75" fill="#0d0b14" />
+        </g>
+        <ellipse cx="32" cy="47" rx="7" ry="5.5" fill="#1a1626" />
+      </g>
+      <g class="neko__head">
+        <path d="M15 29 14 11l10 8h16l10-8-1 18c0 8-7.5 13-17 13S15 37 15 29Z" fill="#0d0b14" />
+        <path d="M17 14.5 23 19.3 17.3 23Z M47 14.5 41 19.3 46.7 23Z" fill="#8b5cf6" opacity=".85" />
+        <g class="neko__eyes">
+          <ellipse cx="25" cy="28" rx="3.2" ry="3.8" fill="#a78bfa" />
+          <ellipse cx="39" cy="28" rx="3.2" ry="3.8" fill="#a78bfa" />
+          <ellipse cx="25.6" cy="28" rx="1.3" ry="2.6" fill="#07060b" />
+          <ellipse cx="39.6" cy="28" rx="1.3" ry="2.6" fill="#07060b" />
+          <circle cx="24" cy="26.5" r=".9" fill="#fff" />
+          <circle cx="38" cy="26.5" r=".9" fill="#fff" />
+        </g>
+        <g class="neko__sleep" fill="none" stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round">
+          <path d="M21.5 28.5q3.5 2.6 7 0" />
+          <path d="M35.5 28.5q3.5 2.6 7 0" />
+        </g>
+        <path d="M30.4 32.6h3.2L32 34.4Z" fill="#f0abfc" />
+        <path d="M32 34.4q-1.6 2-3.4 1M32 34.4q1.6 2 3.4 1" fill="none" stroke="#3b3550" stroke-width="1" stroke-linecap="round" />
+        <path d="M18 32h-6M18 34.5l-5.5 1.5M46 32h6M46 34.5l5.5 1.5" stroke="#3b3550" stroke-width=".9" stroke-linecap="round" />
+        <circle cx="20.5" cy="33.5" r="2" fill="#8b5cf6" opacity=".35" />
+        <circle cx="43.5" cy="33.5" r="2" fill="#8b5cf6" opacity=".35" />
+      </g>
+      <!-- collar morado -->
+      <path d="M21 40.5q11 5 22 0" fill="none" stroke="#8b5cf6" stroke-width="2.6" stroke-linecap="round" />
+      <circle cx="32" cy="44" r="2.2" fill="#fbbf24" />
+    </svg>
+    <span class="neko__z mono">z</span>
+  </div>
+
+  <script src="/assets/i18n.js"></script>
+  <script src="/assets/core.js"></script>
+  <script src="/assets/app.js"></script>
+  <script src="/assets/shop.js"></script>
+</body>
+</html>
