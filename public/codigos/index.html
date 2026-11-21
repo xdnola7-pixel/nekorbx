@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Códigos digitales — NekoRBX</title>
+  <meta name="description" content="Consulta los códigos digitales disponibles en NekoRBX." />
+  <meta name="theme-color" content="#07060b" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="nav"><div class="nav__inner container">
+    <a href="/" class="logo"><svg class="logo__mark"><use href="/assets/icons.svg#i-cat" /></svg><span class="logo__text">Neko<b>RBX</b></span></a>
+    <nav class="nav__menu" aria-label="Principal"><a class="nav__link" href="/">Inicio</a><a class="nav__link is-active" href="/codigos/">Códigos digitales</a></nav>
+    <div class="nav__actions"><a class="btn btn--pill btn--ghost" href="/acceso/?next=%2Fcodigos%2F">Iniciar sesión</a><a class="btn btn--pill btn--border" href="/admin/codigos.html">Administrar</a></div>
+  </div></header>
+  <main class="container page">
+    <div class="section-head"><div><h1 class="section-title"><span class="bar"></span>Códigos digitales</h1><p class="section-sub">Códigos auténticos ingresados manualmente por la administración. Cada código disponible se entrega una sola vez.</p></div></div>
+    <div class="a-card" style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 20px;margin-bottom:22px"><strong>Importante:</strong> los códigos se entregan desde el inventario real; no se crean códigos aleatorios. Inicia sesión para solicitar un código disponible.</div>
+    <div class="grid grid--products" id="codeServices" aria-live="polite"><p class="muted">Cargando servicios…</p></div>
+    <div class="panel" id="claimResult" hidden style="margin-top:24px"><h2 id="claimTitle">Tu código</h2><p class="muted">Guárdalo ahora. No se mostrará de nuevo en esta pantalla.</p><div class="mono" id="claimCode" style="font-size:clamp(1.2rem,4vw,2rem);padding:16px;background:#0c0b12;border:1px solid var(--border);border-radius:12px;overflow-wrap:anywhere"></div><button class="btn btn--pill btn--primary" id="copyClaim" type="button" style="margin-top:14px">Copiar código</button></div>
+    <p class="form-error" id="codesError" role="alert" hidden></p>
+  </main>
+  <footer class="footer"><div class="container footer__bottom mono"><p>© 2026 NekoRBX.</p><a href="/">Volver a la tienda</a></div></footer>
+  <script src="/assets/i18n.js"></script><script src="/assets/core.js"></script><script src="/assets/codes.js"></script>
+</body>
+</html>
